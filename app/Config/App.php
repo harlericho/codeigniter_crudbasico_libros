@@ -23,7 +23,10 @@ class App extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $baseURL = 'http://192.168.100.130/sitiosweb/codeigniter_crudbasico_libros/';
+	//? Si deseas ver el proyecto en tu teledono o en otra pc que este
+	//? en la misma red lan solo debes poner la ip de la maquina donde esta el proyecto.
+	// * ejemplo: public $baseURL = 'http://0.0.0.0:80/sitiosweb/codeigniter_crudbasico_libros/';
+	public $baseURL = 'http://localhost/sitiosweb/codeigniter_crudbasico_libros/';
 
 	/**
 	 * --------------------------------------------------------------------------

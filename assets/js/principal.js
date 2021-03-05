@@ -1,5 +1,11 @@
 $(document).ready(function () {
     listado();
+    $('#exampleModal').modal({
+        backdrop: 'static',
+        keyboard: false,
+        focus: false,
+        show: false
+    });
 });
 
 function listado() {
@@ -161,3 +167,9 @@ function limpiar() {
 
     //$("#modaladd")[0].reset();
 }
+
+$(function () {
+    $('#exampleModal').on('shown.bs.modal', function (e) {
+        $('#nombre').focus();
+    })
+});
