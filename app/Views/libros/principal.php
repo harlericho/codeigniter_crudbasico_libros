@@ -1,4 +1,5 @@
-<?= $header ?>
+
+<?= $this->include('templates/header.php') ?>
 <!-- --------------------------- -->
 <div class="container">
     <div class="row justify-content-center mt-5">
@@ -42,4 +43,4 @@
     </div>
 
 </div>
-<?= $footer ?>
+<?= $this->include('templates/footer.php') ?>

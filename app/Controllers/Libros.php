@@ -13,9 +13,9 @@ class Libros extends BaseController
 	{
 
 		//* vista general del formulario
-		$datos['header'] = view('templates/header');
-		$datos['footer'] = view('templates/footer');
-		return view('libros/principal', $datos);
+		//$datos['header'] = view('templates/header');
+		//$datos['footer'] = view('templates/footer');
+		return view('libros/principal');
 	}
 
 	public function listado()

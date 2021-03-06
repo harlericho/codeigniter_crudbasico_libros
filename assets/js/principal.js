@@ -23,20 +23,20 @@ function listado() {
                 html += "<td>" + data[key]['nombre'] + "</td>";
                 html += "<td>" + data[key]['descripcion'] + "</td>";
                 html += `<td>
-               <a href="#" id="del" value="${data[key]['id']}" class="btn btn-sm btn-danger" title="Eliminar">
-               <i class="fas fa-trash-restore"></i>
-               </a>
-               <a href="#" id="edit" value="${data[key]['id']}" class="btn btn-sm btn-success" title="Editar">
-               <i class="fas fa-pencil-alt"></i>
-               </a>
-               </td>`;
+                <a href="#" id="del" value="${data[key]['id']}" class="btn btn-sm btn-danger" title="Eliminar">
+                <i class="fas fa-trash-restore"></i>
+                </a>
+                <a href="#" id="edit" value="${data[key]['id']}" class="btn btn-sm btn-success" title="Editar">
+                <i class="fas fa-pencil-alt"></i>
+                </a>
+                </td>`;
             }
             html += "</tr></tbody></table>"
             $("#tabla").html(html);
             //tabla filtro
             $('#tablafiltro').DataTable({
                 "language": {
-                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
                 }
             });
         }
