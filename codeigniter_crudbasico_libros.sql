@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `libros` (
   `fecha_c` datetime NOT NULL DEFAULT current_timestamp(),
   `estado` char(1) NOT NULL DEFAULT 'A',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 -- Data exporting was unselected.
 
