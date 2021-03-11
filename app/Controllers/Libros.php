@@ -3,10 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\Libros_model;
-use CodeIgniter\Controller;
-use CodeIgniter\HTTP\Request;
-use CodeIgniter\HTTP\Response;
 
+define('IS_AJAX', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
 class Libros extends BaseController
 {
 	public function index()
@@ -21,9 +19,11 @@ class Libros extends BaseController
 	public function listado()
 	{
 		//* listado de los registros
-		$home_model = new Libros_model();
-		$data = $home_model->getTest();
-		return json_encode($data);
+		if (IS_AJAX) {
+			$home_model = new Libros_model();
+			$data = $home_model->getTest();
+			echo json_encode($data);
+		}
 	}
 
 	public function guardar()
@@ -39,25 +39,27 @@ class Libros extends BaseController
 	}
 	public function ideditar()
 	{
-		//* obtner los datos por medio del id
-		$home_model = new Libros_model();
+		if (IS_AJAX) {
+			//* obtner los datos por medio del id
+			$home_model = new Libros_model();
 
-		$id = ['id' => $_POST['idEditar']];
+			$id = ['id' => $_POST['idEditar']];
 
-		$post = $home_model->getTestID($id);
-		$arrayName = [
-			'res' => 'suc',
-			'post' => $post
-		];
-		//? codigo para actualizar dato sin Query Builder
-		/*
+			$post = $home_model->getTestID($id);
+			$arrayName = [
+				'res' => 'suc',
+				'post' => $post
+			];
+			//? codigo para actualizar dato sin Query Builder
+			/*
 		//$post = $home_model->find($_POST['idEditar']);
 		$arrayName = [
 			'res' => 'suc',
 			'post' => $post
 		];
 		*/
-		return json_encode($arrayName);
+			return json_encode($arrayName);
+		}
 	}
 
 	public function actualizar()
